@@ -1,0 +1,52 @@
+import Link from "next/link";
+
+const navigation = {
+  main: [{ name: "Home", href: "#" }],
+  social: [
+    {
+      name: "Telegram",
+      href: "https://t.me/hexcryptodev",
+      icon: (props: any) => (
+        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+          <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+        </svg>
+      ),
+    },
+  ],
+};
+
+export default function Example() {
+  return (
+    <footer className="bg-white">
+      <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+        <nav
+          className="-mx-5 -my-2 flex flex-wrap justify-center"
+          aria-label="Footer"
+        >
+          {navigation.main.map((item) => (
+            <div key={item.name} className="px-5 py-2">
+              <Link href={item.href}>
+                <a className="text-base text-gray-500 hover:text-gray-900">
+                  {item.name}
+                </a>
+              </Link>
+            </div>
+          ))}
+        </nav>
+        <div className="mt-8 flex justify-center space-x-6">
+          {navigation.social.map((item) => (
+            <Link key={item.name} href={item.href}>
+              <a className="text-gray-400 hover:text-gray-500">
+                <span className="sr-only">{item.name}</span>
+                <item.icon className="h-6 w-6" aria-hidden="true" />
+              </a>
+            </Link>
+          ))}
+        </div>
+        <p className="mt-8 text-center text-base text-gray-400">
+          &copy; 2021 HEX Mobile. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  );
+}
