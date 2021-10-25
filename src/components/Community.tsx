@@ -1,44 +1,71 @@
-/* This example requires Tailwind CSS v2.0+ */
+import Link from "next/link";
+
+const communiuty = [
+  {
+    name: "HEX.com",
+    image: "images/community/hex-com-logo.svg",
+    href: "https://hex.com",
+  },
+  {
+    name: "Pulse Chain",
+    image: "images/community/pulse-chain-logo.svg",
+    href: "https://pulsechain.com",
+  },
+  {
+    name: "Look Into HEX",
+    image: "images/community/look-into-hex-logo.svg",
+    href: "https://lookintohex.com",
+  },
+  {
+    name: "Staker",
+    image: "images/community/staker-logo.svg",
+    href: "https://staker.app",
+  },
+  {
+    name: "HEX Calc",
+    image: "images/community/hex-calc-logo.svg",
+    href: "https://hexcalc.net",
+  },
+
+  {
+    name: "HEX Daily Stats",
+    image: "images/community/hex-daily-stats-logo.svg",
+    href: "https://hexdailystats.com",
+  },
+
+  {
+    name: "Stake HEX Today",
+    image: "images/community/stake-hex-today-logo.svg",
+    href: "https://stakehex.today",
+  },
+];
 export default function Community() {
   return (
     <div className="bg-white">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
-          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-            <img
-              className="h-12"
-              src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
-              alt="Tuple"
-            />
-          </div>
-          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-            <img
-              className="h-12"
-              src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg"
-              alt="Mirage"
-            />
-          </div>
-          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-            <img
-              className="h-12"
-              src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-              alt="StaticKit"
-            />
-          </div>
-          <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
-            <img
-              className="h-12"
-              src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
-              alt="Transistor"
-            />
-          </div>
-          <div className="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
-            <img
-              className="h-12"
-              src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
-              alt="Workcation"
-            />
-          </div>
+        <div className="text-center px-4 sm:px-6 lg:px-8">
+          <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+            Community
+          </p>
+          <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
+            Helpful community resources that were used in helping develop and
+            shape the direction of HEX mobile.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-24 md:grid-cols-6 lg:grid-cols-4 mt-12">
+          {communiuty.map((item) => (
+            <div
+              key={item.name}
+              className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1"
+            >
+              <Link href={item.href}>
+                <a className="flex flex-col items-center justify-center">
+                  <img className="h-12" src={item.image} alt={item.name} />
+                </a>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </div>
