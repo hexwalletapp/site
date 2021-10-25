@@ -10,7 +10,7 @@ const navigation = [
 export default function Example() {
   return (
     <div className="relative bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 flex flex-col-reverse lg:flex-row lg:items-center lg:justify-between">
         <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:pb-28 xl:pb-32">
           <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
@@ -24,7 +24,7 @@ export default function Example() {
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                 HEX is the first blockchain certificate of deposit with high
-                interest, no minimums & decentralized design.
+                interest, no minimums &amp; decentralized design.
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
@@ -46,16 +46,18 @@ export default function Example() {
             </div>
           </main>
         </div>
-        <div className="hero-video lg:items-center">
-          <video
-            src="videos/hexmobile-hero.mp4"
-            poster="
+        <div className="flex justify-center">
+          <div className="max-w-sm">
+            <video
+              src="videos/hexmobile-hero.mp4"
+              poster="
             images/hexmobile-hero.png"
-            playsInline={true}
-            muted={true}
-            autoPlay={true}
-            loop={true}
-          />
+              playsInline={true}
+              muted={true}
+              autoPlay={true}
+              loop={true}
+            />
+          </div>
         </div>
       </div>
     </div>

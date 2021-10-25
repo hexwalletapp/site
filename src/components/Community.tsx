@@ -54,7 +54,7 @@ export default function Community() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-24 md:grid-cols-6 lg:grid-cols-4 mt-12">
+        <div className="grid grid-cols-1 gap-24 sm:grid-cols-2 md:grid-cols-6 lg:grid-cols-4 mt-12">
           {communiuty.map((item) => (
             <div
               key={item.name}
