@@ -1,41 +1,42 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const communiuty = [
   {
     name: "HEX.com",
-    image: "images/community/hex-com-logo.svg",
+    image: "/images/community/hex-com-logo.svg",
     href: "https://hex.com",
   },
   {
     name: "Pulse Chain",
-    image: "images/community/pulse-chain-logo.svg",
+    image: "/images/community/pulse-chain-logo.svg",
     href: "https://pulsechain.com",
   },
   {
     name: "Look Into HEX",
-    image: "images/community/look-into-hex-logo.svg",
+    image: "/images/community/look-into-hex-logo.svg",
     href: "https://lookintohex.com",
   },
   {
     name: "Staker",
-    image: "images/community/staker-logo.svg",
+    image: "/images/community/staker-logo.svg",
     href: "https://staker.app",
   },
   {
     name: "HEX Calc",
-    image: "images/community/hex-calc-logo.svg",
+    image: "/images/community/hex-calc-logo.svg",
     href: "https://hexcalc.net",
   },
 
   {
     name: "HEX Daily Stats",
-    image: "images/community/hex-daily-stats-logo.svg",
+    image: "/images/community/hex-daily-stats-logo.svg",
     href: "https://hexdailystats.com",
   },
 
   {
     name: "Stake HEX Today",
-    image: "images/community/stake-hex-today-logo.svg",
+    image: "/images/community/stake-hex-today-logo.svg",
     href: "https://stakehex.today",
   },
 ];
@@ -61,6 +62,7 @@ export default function Community() {
             >
               <Link href={item.href}>
                 <a className="flex flex-col items-center justify-center">
+                  {/* <Image src={item.image} alt={item.name} /> */}
                   <img className="h-12" src={item.image} alt={item.name} />
                 </a>
               </Link>

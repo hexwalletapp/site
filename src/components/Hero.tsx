@@ -19,17 +19,17 @@ export default function Example() {
                   HEX Mobile
                 </span>{" "}
                 <span className="block xl:inline">
-                  tracks your finanical future
+                  tracks your financial future
                 </span>
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                HEX is the first Blockchain Certificate of Deposit High
-                interest, with no minimum & decentralized design.
+                HEX is the first blockchain certificate of deposit with high
+                interest, no minimums & decentralized design.
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
                   <a
-                    href="#"
+                    href="#join-beta"
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
                   >
                     Join Beta
@@ -46,12 +46,11 @@ export default function Example() {
             </div>
           </main>
         </div>
-        {/* <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0"> */}
         <div className="hero-video lg:items-center">
           <video
-            src="videos/video01.mp4"
+            src="videos/hexmobile-hero.mp4"
             poster="
-            videos/video01.mp4.jpg"
+            images/hexmobile-hero.png"
             playsInline={true}
             muted={true}
             autoPlay={true}

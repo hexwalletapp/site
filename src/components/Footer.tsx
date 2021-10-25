@@ -1,7 +1,12 @@
 import Link from "next/link";
 
 const navigation = {
-  main: [{ name: "Home", href: "#" }],
+  main: [
+    {
+      name: "Donate",
+      href: "https://etherscan.io/address/0x62489E328Edc619A6b7aC26D4DCbFF9c8028b8B1",
+    },
+  ],
   social: [
     {
       name: "Telegram",
@@ -44,7 +49,7 @@ export default function Example() {
           ))}
         </div>
         <p className="mt-8 text-center text-base text-gray-400">
-          &copy; 2021 HEX Mobile. All rights reserved.
+          &copy; 2021. All rights reserved.
         </p>
       </div>
     </footer>

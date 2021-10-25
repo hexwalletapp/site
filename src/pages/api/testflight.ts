@@ -40,7 +40,7 @@ export default async function handler(req: any, res: any) {
         searchParams: {
           "filter[app]": appIdentifier.toString(),
           "limit[betaTesters]": "0",
-          "filter[name]": "Public Testers",
+          "filter[name]": "Hexicans",
           include: "app",
           "fields[apps]": "name",
         },
