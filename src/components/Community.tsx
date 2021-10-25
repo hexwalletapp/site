@@ -62,8 +62,7 @@ export default function Community() {
             >
               <Link href={item.href}>
                 <a className="flex flex-col items-center justify-center">
-                  {/* <Image src={item.image} alt={item.name} /> */}
-                  <img className="h-12" src={item.image} alt={item.name} />
+                  <img className="max-h-sm" src={item.image} alt={item.name} />
                 </a>
               </Link>
             </div>
