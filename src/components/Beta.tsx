@@ -49,8 +49,7 @@ export default function Beta() {
                   Join the iOS TestFlight private beta
                 </h2>
                 <p className="mt-6 mx-auto max-w-2xl text-lg text-white">
-                  This app is only available via Apple Test flight and signing
-                  up will send you an invite.
+                  This app is only available via Apple Test flight.
                 </p>
               </div>
               <div className="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
