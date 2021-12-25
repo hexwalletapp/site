@@ -1,42 +1,11 @@
 import Link from "next/link";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-import CompletionModal from "./CompletionModal";
 import { useState } from "react";
 
 export default function Beta() {
-  const { executeRecaptcha } = useGoogleReCaptcha();
   const [open, setOpen] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
-  // const joinBeta = async (event: any) => {
-  //   event.preventDefault();
-
-  //   if (executeRecaptcha && !executeRecaptcha("beta_sign_up")) {
-  //     return;
-  //   }
-
-  //   try {
-  //     const res = await fetch("/api/testflight", {
-  //       body: JSON.stringify({
-  //         firstName: event.target.firstName.value,
-  //         lastName: event.target.lastName.value,
-  //         email: event.target.email.value,
-  //       }),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       method: "POST",
-  //     });
-  //     setSubmitted(true);
-  //     setOpen(true);
-  //   } catch (error) {
-  //     alert(error);
-  //   }
-  // };
 
   return (
-    <div className="bg-white py-16 sm:py-24">
-      <CompletionModal open={open} setOpen={setOpen} />
+    <div className="py-16 sm:py-24">
       <div className="relative sm:py-16">
         <div
           id="join-beta"
@@ -54,7 +23,7 @@ export default function Beta() {
               </div>
               <div className="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
                 <Link href="https://testflight.apple.com/join/iLl3I9g4">
-                  <a className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-500 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50">
+                  <a className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 primary-button">
                     Join Beta
                   </a>
                 </Link>

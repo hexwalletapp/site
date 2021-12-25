@@ -42,13 +42,13 @@ const communiuty = [
 ];
 export default function Community() {
   return (
-    <div className="bg-white">
+    <div>
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="text-center px-4 sm:px-6 lg:px-8">
-          <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+          <p className="mt-2 text-3xl font-extrabold primary-text tracking-tight sm:text-4xl ">
             Community
           </p>
-          <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
+          <p className="mt-5 max-w-prose mx-auto text-xl secondary-text">
             Helpful community resources that were used in helping develop and
             shape the direction of HEX mobile.
           </p>
@@ -58,7 +58,7 @@ export default function Community() {
           {communiuty.map((item) => (
             <div
               key={item.name}
-              className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1"
+              className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 hover:scale-110 transition-all"
             >
               <Link href={item.href}>
                 <a className="flex flex-col items-center justify-center">

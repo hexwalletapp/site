@@ -5,7 +5,7 @@ import Header from "../components/ui/header";
 
 const Home: NextPage = () => {
   return (
-    <div className="text-black">
+    <div className="primary-background">
       <Header />
       <Main />
       <Footer />

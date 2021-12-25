@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.primary-text {
+  @apply text-gray-900 dark:text-gray-50;
+}
+
+.secondary-text {
+  @apply text-gray-500 dark:text-gray-400;
+}
+
+.primary-background {
+  @apply bg-white dark:bg-black;
+}
+
+.secondary-background {
+  @apply bg-gray-100 dark:bg-gray-900;
+}
+
+.primary-button {
+  @apply text-white bg-blue-600 hover:bg-blue-700 transition-all;
+}
+
+.secondary-button {
+  @apply text-blue-700 bg-blue-100 hover:bg-blue-200 transition-all;
+}

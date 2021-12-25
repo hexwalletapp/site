@@ -93,12 +93,12 @@ const features = [
 
 export default function Example() {
   return (
-    <div className="relative bg-white py-16 sm:py-24 lg:py-32">
+    <div className="relative py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-        <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+        <p className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl primary-text">
           HEX Insights On The Go
         </p>
-        <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
+        <p className="mt-5 max-w-prose mx-auto text-xl secondary-text">
           HEX has a lot of complex game theory and the goal of this app is to
           unwraps and expose a lot of the mystery behind the app by surfacing
           the most important information.
@@ -107,7 +107,7 @@ export default function Example() {
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => (
               <div key={feature.name} className="pt-6">
-                <div className="flow-root bg-gray-100 rounded-lg px-6 pb-8">
+                <div className="flow-root secondary-background rounded-lg px-6 pb-8">
                   <div className="-mt-6">
                     <div>
                       <span className="inline-flex items-center justify-center p-3 bg-gray-700 rounded-md shadow-lg ">
@@ -117,10 +117,10 @@ export default function Example() {
                         />
                       </span>
                     </div>
-                    <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
+                    <h3 className="mt-8 text-lg font-medium primary-text tracking-tight">
                       {feature.name}
                     </h3>
-                    <p className="mt-5 text-base text-gray-500">
+                    <p className="mt-5 text-base secondary-text">
                       {feature.description}
                     </p>
                   </div>
