@@ -1,11 +1,19 @@
 import Head from "next/head";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 const title = "HEX Mobile";
 const description = "Track your financial future";
 
 const Header = ({}) => {
+  const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
+
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
+
+  const isDark = theme === "dark";
+
   return (
     <Head>
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -17,7 +25,7 @@ const Header = ({}) => {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta charSet="utf-8" />
       <meta name="description" content={description} />
-      <meta name="theme-color" content={theme === "dark" ? "#000" : "#FFF"} />
+      <meta name="theme-color" content={isDark ? "#000" : "#FFF"} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -27,7 +35,7 @@ const Header = ({}) => {
       <meta
         name="twitter:image"
         content={
-          theme === "dark"
+          isDark
             ? "/images/dark/share-card.png"
             : "/images/light/share-card.png"
         }
@@ -38,7 +46,7 @@ const Header = ({}) => {
       <meta
         property="og:image"
         content={
-          theme === "dark"
+          isDark
             ? "/images/dark/share-card.png"
             : "/images/light/share-card.png"
         }
