@@ -1,5 +1,4 @@
 import { Switch } from "@headlessui/react";
-import useDarkMode from "use-dark-mode";
 import { useTheme } from "next-themes";
 
 function classNames(...classes: any) {
