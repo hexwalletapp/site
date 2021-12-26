@@ -1,3 +1,8 @@
+import type {
+  GetServerSideProps,
+  GetServerSidePropsContext,
+  NextPage,
+} from "next";
 import Head from "next/head";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -5,7 +10,7 @@ import { useEffect, useState } from "react";
 const title = "HEX Mobile";
 const description = "Track your financial future";
 
-const Header = ({}) => {
+const Header: NextPage = ({ imagePath }: any) => {
   const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
 
@@ -32,26 +37,11 @@ const Header = ({}) => {
       <meta name="twitter:site" content="@joeblau" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta
-        name="twitter:image"
-        content={
-          isDark
-            ? "/images/dark/share-card.png"
-            : "/images/light/share-card.png"
-        }
-      />
+      <meta name="twitter:image" content={imagePath} />
 
       {/* Open Graph */}
       <meta property="og:url" content="https://hexmobile.app" key="ogurl" />
-      <meta
-        property="og:image"
-        content={
-          isDark
-            ? "/images/dark/share-card.png"
-            : "/images/light/share-card.png"
-        }
-        key="ogimage"
-      />
+      <meta property="og:image" content={imagePath} key="ogimage" />
       <meta property="og:site_name" content="" key="ogsitename" />
       <meta property="og:title" content={title} key="ogtitle" />
       <meta property="og:description" content={description} key="ogdesc" />
@@ -62,4 +52,20 @@ const Header = ({}) => {
   );
 };
 
+export const getServerSideProps: GetServerSideProps = async ({
+  query,
+}: GetServerSidePropsContext) => {
+  // check if its day or night based on time of day
+  const date = new Date();
+  const hours = date.getHours();
+  const isDark = hours > 18 || hours < 6;
+
+  const imagePath = isDark
+    ? "/images/dark/share-card.png"
+    : "/images/light/share-card.png";
+
+  return {
+    props: { imagePath }, // will be passed to the page component as props
+  };
+};
 export default Header;
