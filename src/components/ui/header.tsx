@@ -1,10 +1,11 @@
 import Head from "next/head";
+import { useTheme } from "next-themes";
 
-const siteTitle = "HEX Mobile";
+const title = "HEX Mobile";
 const description = "Track your financial future";
-const previewImage = "/images/share-card.png";
 
-const Header = ({ title = siteTitle, image = previewImage }) => {
+const Header = ({}) => {
+  const { theme } = useTheme();
   return (
     <Head>
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -16,18 +17,33 @@ const Header = ({ title = siteTitle, image = previewImage }) => {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta charSet="utf-8" />
       <meta name="description" content={description} />
-      <meta name="theme-color" content="#FFF" />
+      <meta name="theme-color" content={theme === "dark" ? "#000" : "#FFF"} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@joeblau" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta
+        name="twitter:image"
+        content={
+          theme === "dark"
+            ? "/images/dark/share-card.png"
+            : "/images/light/share-card.png"
+        }
+      />
 
       {/* Open Graph */}
       <meta property="og:url" content="https://hexmobile.app" key="ogurl" />
-      <meta property="og:image" content={image} key="ogimage" />
+      <meta
+        property="og:image"
+        content={
+          theme === "dark"
+            ? "/images/dark/share-card.png"
+            : "/images/light/share-card.png"
+        }
+        key="ogimage"
+      />
       <meta property="og:site_name" content="" key="ogsitename" />
       <meta property="og:title" content={title} key="ogtitle" />
       <meta property="og:description" content={description} key="ogdesc" />
