@@ -3,16 +3,18 @@ import Main from "../components/main";
 import Footer from "../components/footer";
 import { useTheme } from "next-themes";
 import Head from "next/head";
-
-interface MetaTag {
-  image: string;
-}
+import { useEffect, useState } from "react";
 
 const title = "HEX Mobile";
 const description = "Track your financial future";
 
-const Home: NextPage = ({ metaTag }: any) => {
+const Home = () => {
+  const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
+
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
+
   const isDark = theme === "dark";
 
   return (
@@ -34,11 +36,26 @@ const Home: NextPage = ({ metaTag }: any) => {
         <meta name="twitter:site" content="@joeblau" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={metaTag.image} />
+        <meta
+          name="twitter:image"
+          content={
+            isDark
+              ? "/images/dark/share-card.png"
+              : "/images/light/share-card.png"
+          }
+        />
 
         {/* Open Graph */}
         <meta property="og:url" content="https://hexmobile.app" key="ogurl" />
-        <meta property="og:image" content={metaTag.image} key="ogimage" />
+        <meta
+          property="og:image"
+          content={
+            isDark
+              ? "/images/dark/share-card.png"
+              : "/images/light/share-card.png"
+          }
+          key="ogimage"
+        />
         <meta property="og:site_name" content="" key="ogsitename" />
         <meta property="og:title" content={title} key="ogtitle" />
         <meta property="og:description" content={description} key="ogdesc" />
@@ -51,23 +68,5 @@ const Home: NextPage = ({ metaTag }: any) => {
     </div>
   );
 };
-
-export async function getServerSideProps() {
-  const date = new Date();
-  const hours = date.getHours();
-  const isDark = hours > 18 || hours < 6;
-
-  const imagePath = isDark
-    ? "/images/dark/share-card.png"
-    : "/images/light/share-card.png";
-
-  const metaTag: MetaTag = {
-    image: imagePath,
-  };
-
-  return {
-    props: { metaTag }, // will be passed to the page component as props
-  };
-}
 
 export default Home;
