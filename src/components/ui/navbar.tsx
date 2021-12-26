@@ -1,32 +1,38 @@
 import { Switch } from "@headlessui/react";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 const Navbar = () => {
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  const darkMode = theme === "dark";
+
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
+
+  const isDark = theme === "dark";
 
   const ToggleSwitch = (
     <Switch
-      checked={darkMode}
-      onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
+      checked={isDark}
+      onChange={() => setTheme(isDark ? "light" : "dark")}
       className={classNames(
-        darkMode ? "bg-gray-700" : "bg-gray-200",
-        "relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        isDark ? "bg-gray-700" : "bg-gray-200",
+        "relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
       )}
     >
       <span className="sr-only">Use setting</span>
       <span
         className={classNames(
-          darkMode ? "translate-x-5" : "translate-x-0",
+          isDark ? "translate-x-5" : "translate-x-0",
           "pointer-events-none relative inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200"
         )}
       >
         <span
           className={classNames(
-            darkMode
+            isDark
               ? "opacity-0 ease-out duration-100"
               : "opacity-100 ease-in duration-200",
             "absolute inset-0 h-full w-full flex items-center justify-center transition-opacity"
@@ -47,7 +53,7 @@ const Navbar = () => {
         </span>
         <span
           className={classNames(
-            darkMode
+            isDark
               ? "opacity-100 ease-in duration-200"
               : "opacity-0 ease-out duration-100",
             "absolute inset-0 h-full w-full flex items-center justify-center transition-opacity"
