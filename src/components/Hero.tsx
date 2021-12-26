@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { useTheme } from "next-themes";
-export default function Example() {
-  const { theme, setTheme } = useTheme();
+
+export default function Hero() {
+  const { theme } = useTheme();
   const darkMode = theme === "dark";
 
   return (

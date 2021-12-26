@@ -1,9 +1,6 @@
 import Link from "next/link";
-import { useState } from "react";
 
 export default function Beta() {
-  const [open, setOpen] = useState(false);
-
   return (
     <div className="py-16 sm:py-24">
       <div className="relative sm:py-16">

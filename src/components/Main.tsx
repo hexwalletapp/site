@@ -1,7 +1,7 @@
 import Hero from "./hero";
-import Features from "./Features";
-import Community from "./Community";
-import Beta from "./Beta";
+import Features from "./features";
+import Community from "./community";
+import Beta from "./beta";
 import Navbar from "./ui/navbar";
 
 export default function Main() {
