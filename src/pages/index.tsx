@@ -3,19 +3,13 @@ import Main from "../components/main";
 import Footer from "../components/footer";
 import { useTheme } from "next-themes";
 import Head from "next/head";
-import { useEffect, useState } from "react";
 
 const title = "HEX Mobile";
 const description = "Track your financial future";
 const image = "/images/dark/share-card.png";
 
 const Home = () => {
-  const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
-
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
-
   const isDark = theme === "dark";
 
   return (
