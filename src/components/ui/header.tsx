@@ -5,18 +5,12 @@ import type {
 } from "next";
 import Head from "next/head";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 const title = "HEX Mobile";
 const description = "Track your financial future";
 
 const Header: NextPage = ({ imagePath }: any) => {
-  const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
-
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
-
   const isDark = theme === "dark";
 
   return (
