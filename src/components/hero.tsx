@@ -13,7 +13,7 @@ export default function Hero() {
             <div className="text-center">
               <h1 className="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl primary-text">
                 <span className="block text-transparent bg-clip-text xl:inline bg-gradient-to-tr from-hex-0 via-hex-1 via-hex-2 via-hex-3 to-hex-4">
-                  HEX Mobile
+                  HEX Wallet
                 </span>
                 <span className="block ">tracks your financial future</span>
               </h1>

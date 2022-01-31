@@ -98,7 +98,7 @@ const Navbar = () => {
             </g>
           </svg>
           <span className="self-center text-lg font-semibold whitespace-nowrap primary-text">
-            HEX Mobile
+            HEX Wallet
           </span>
         </div>
         <div className="w-full block w-auto">{ToggleSwitch}</div>

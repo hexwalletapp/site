@@ -50,7 +50,7 @@ export default function Community() {
           </p>
           <p className="mt-5 max-w-prose mx-auto text-xl secondary-text">
             Helpful community resources that were used in helping develop and
-            shape the direction of HEX mobile.
+            shape the direction of HEX wallet.
           </p>
         </div>
 
