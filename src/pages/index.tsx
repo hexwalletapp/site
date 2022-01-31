@@ -6,11 +6,15 @@ import Head from "next/head";
 
 const title = "HEX Wallet";
 const description = "Track your financial future";
-const image = "/images/dark/share-card.png";
 
-const Home = () => {
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
+const Home: NextPage = () => {
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
+
+  const image = isDark
+    ? "/images/dark/share-card.png"
+    : "/images/light/share-card.png";
+  const themeColor = isDark ? "#000" : "#FFF";
 
   return (
     <div className="primary-background">
@@ -24,7 +28,7 @@ const Home = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
         <meta name="description" content={description} />
-        <meta name="theme-color" content={isDark ? "#000" : "#FFF"} />
+        <meta name="theme-color" content={themeColor} />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />

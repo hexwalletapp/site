@@ -2,8 +2,8 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 
 export default function Hero() {
-  const { theme } = useTheme();
-  const darkMode = theme === "dark";
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
 
   return (
     <div>
@@ -32,7 +32,7 @@ export default function Hero() {
           </div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="relative">
-              {darkMode ? (
+              {isDark ? (
                 <Image
                   src="/images/dark/hero.png"
                   alt="Hero"

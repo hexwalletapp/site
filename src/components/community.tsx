@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const communiuty = [
+const community = [
   {
     name: "HEX.com",
     image: "/images/community/hex-com-logo.svg",
@@ -55,7 +55,7 @@ export default function Community() {
         </div>
 
         <div className="grid grid-cols-1 gap-24 sm:grid-cols-2 md:grid-cols-6 lg:grid-cols-4 mt-12">
-          {communiuty.map((item) => (
+          {community.map((item) => (
             <div
               key={item.name}
               className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1 hover:scale-110 transition-all"
