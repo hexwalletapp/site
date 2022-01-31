@@ -4,7 +4,7 @@ import Footer from "../components/footer";
 import { useTheme } from "next-themes";
 import Head from "next/head";
 
-const title = "HEX Mobile";
+const title = "HEX Wallet";
 const description = "Track your financial future";
 const image = "/images/dark/share-card.png";
 
@@ -28,13 +28,13 @@ const Home = () => {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@joeblau" />
+        <meta name="twitter:site" content="@hexwalletapp" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
 
         {/* Open Graph */}
-        <meta property="og:url" content="https://hexmobile.app" key="ogurl" />
+        <meta property="og:url" content="https://hexwallet.app" key="ogurl" />
         <meta property="og:image" content={image} key="ogimage" />
         <meta property="og:site_name" content="" key="ogsitename" />
         <meta property="og:title" content={title} key="ogtitle" />
