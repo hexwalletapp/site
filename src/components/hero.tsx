@@ -1,9 +1,14 @@
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { useState, useEffect } from "react";
 
 export default function Hero() {
+  const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
+
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
 
   return (
     <div>
