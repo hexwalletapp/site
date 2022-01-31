@@ -3,23 +3,15 @@ import Main from "../components/main";
 import Footer from "../components/footer";
 import { useTheme } from "next-themes";
 import Head from "next/head";
-import { useState, useEffect } from "react";
-
-const title = "HEX Wallet";
-const description = "Track your financial future";
 
 const Home: NextPage = () => {
-  const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
-
-  const image = isDark
-    ? "/images/dark/share-card.png"
-    : "/images/light/share-card.png";
   const themeColor = isDark ? "#000" : "#FFF";
 
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
+  const title = "HEX Wallet";
+  const description = "Track your financial future";
+  const image = "/images/light/share-card.png";
 
   return (
     <div className="primary-background">
