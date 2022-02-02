@@ -26,17 +26,20 @@ const community = [
     image: "/images/community/hex-calc-logo.svg",
     href: "https://hexcalc.net",
   },
-
   {
     name: "HEX Daily Stats",
     image: "/images/community/hex-daily-stats-logo.svg",
     href: "https://hexdailystats.com",
   },
-
   {
     name: "Stake HEX Today",
     image: "/images/community/stake-hex-today-logo.svg",
     href: "https://stakehex.today",
+  },
+  {
+    name: "HEX.vision",
+    image: "/images/community/hex-vision.svg",
+    href: "https://hex.vision",
   },
 ];
 export default function Community() {
