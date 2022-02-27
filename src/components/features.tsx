@@ -128,7 +128,7 @@ const features = [
 
 export default function Example() {
   return (
-    <div className="relative py-16 sm:py-24 lg:py-32">
+    <div id="features" className="relative py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
         <p className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl primary-text">
           HEX Insights On The Go

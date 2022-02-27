@@ -44,7 +44,7 @@ const community = [
 ];
 export default function Community() {
   return (
-    <div>
+    <div id="community">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="text-center px-4 sm:px-6 lg:px-8">
           <p className="mt-2 text-3xl font-extrabold primary-text tracking-tight sm:text-4xl ">
